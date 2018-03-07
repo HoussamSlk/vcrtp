@@ -57,7 +57,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 </header>
 
 
-	<body>
+	<body background="<?php echo base_url(); ?>assets\images\ddd.png" alt="ddd.jpg" style='opacity:0.9;'>
 	
 			 <div style="color:white; background-color:red; width:15%; border-radius:4px; text-align:center; margin:auto; "> <?= isset($errorlogin) ? $errorlogin : '' ?> </div> <!--this to echo the validation errors -->
 

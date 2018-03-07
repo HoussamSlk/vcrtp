@@ -121,7 +121,7 @@ public function register()
           $error['error'] = "The email you have just entered is already exist, please enter a different email address";
           $this->load->view('partners', $error);
       } else {
-          $this->dbmodel->insert($companyinfo,$image,$password); //call the (function) from model and run it with our inputs.
+          $this->dbmodel->insert($companyinfo,$image); //call the (function) from model and run it with our inputs.
           $noerror['noerror'] = "You are succesfully registered to our Records. Now you can login.";
           $this->load->view('partners', $noerror); #send this errors to loginandregisterpage.
       }

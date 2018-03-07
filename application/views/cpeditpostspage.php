@@ -55,7 +55,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 </header>
 
 
-	<body>
+	<body background="<?php echo base_url(); ?>assets\images\ddd.png" alt="ddd.jpg" style='opacity:0.9;'>
         <h1>Edit <?= $post['title'] ?></h1>
 		<div id="container">
 			<form action="editing/<?= $post['id'] ?>" method="post">

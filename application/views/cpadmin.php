@@ -56,7 +56,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 </header>
 
-<body>
+<body background="<?php echo base_url(); ?>assets\images\ddd.png" alt="ddd.jpg" style='opacity:0.9;'>
 <br>
 <br>  
 <br>

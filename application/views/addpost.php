@@ -71,7 +71,7 @@ or exit('No direct script access allowed');
 
 </header>
 
-    <body>
+   <body background="<?php echo base_url(); ?>assets\images\ddd.png" alt="ddd.jpg" style='opacity:0.9;'>
 
       
 
@@ -112,24 +112,24 @@ if (NULL
 
  {?>
 
-<h1 style="color:darkorange;  font-weight: bold;">Welcome:<?=$this->session->userdata('name')?></h1>   
+<h1 style="color:darkorange; font-weight:700; border: solid 2px; border-radius:4px; width:50%; text-align:center; margin:auto;">Welcome: <?=$this->session->userdata('name')?></h1>   
 
                     <?php }?>
 
 
 <form class='form' action='insertingpost' method='post' enctype='multipart/form-data'>
 
-<label>Post Title</label><br>
+<label style="color:white;  font-weight: bold;">Post Title</label><br>
 
 <input class='input' type="text" name="title"
  placeholder="Post Title">
 <br>
-<label>Description</label><br>
+<label style="color:white;  font-weight: bold;">Description</label><br>
 
 <input class='textarea' type="text" name="description"
  placeholder="Description">
 <br>
-<label>Tag</label><br>
+<label style="color:white;  font-weight: bold;">Tag</label><br>
 
 
 <select class='input' name="tag">
@@ -156,38 +156,38 @@ if (NULL
 
 
 
-<label>Language</label><br>
+<label style="color:white;  font-weight: bold;">Language</label><br>
 
 <input class='input' type="text" name="language"
  placeholder="Language">
 <br>
-<label>Start Date</label><br>
+<label style="color:white;  font-weight: bold;">Start Date</label><br>
 
 <input class='input' type="date" name="startdate"
  placeholder="Start Date">
 <br>
-<label>End Date</label><br>
+<label style="color:white;  font-weight: bold;">End Date</label><br>
 
 <input class='input' type="date" name="enddate"
  placeholder="End Date">
 <br>
-<label>Link</label><br>
+<label style="color:white;  font-weight: bold;">Link</label><br>
 
 <input class='input' type="text" name="link"
  placeholder="Link">
 <br>
-<label>Number of vacancies</label><br>
+<label style="color:white;  font-weight: bold;">Number of vacancies</label><br>
 
 <input class='input' type="number" name="vacanciesnum"
  min="1" placeholder="Number of available vacancies ">
 <br>
-<label>Filled positions</label><br>
+<label style="color:white;  font-weight: bold;">Filled positions</label><br>
 
 <input class='input' type="number" name="filledposition"
  min="1" placeholder="Filled Positions"><br>
 
 <br>
-<div>Image should not excceed 8MB, and the name should not contain charecters or spaces </div>
+<div style="color:white;  font-weight: bold;">Image should not excceed 8MB, and the name should not contain charecters or spaces </div>
 <br>
 <input class="buttonreg" type="file"
  name="image"><br>

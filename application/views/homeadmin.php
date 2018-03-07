@@ -58,13 +58,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 </header>
 
 
-<body>
+<body background="<?php echo base_url(); ?>assets\images\ddd.png" alt="ddd.jpg" style='opacity:0.9;'>
 <br>
 <br>
                 <div> 
                     <?php $loginfoadmin = $this->session->all_userdata(); ?>
                     <div>
-                    <h1 style="color:darkorange;">Welcome:
+                    <h1 style="color:darkorange; font-weight:700; border: solid 2px; border-radius:4px; width:50%; text-align:center; margin:auto;"
+>Welcome:
                     <?= $loginfoadmin['admin_name']   ?> &nbsp; &nbsp;		
 
                 </div>
@@ -73,6 +74,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <div style="color:white; background-color:#3CB371; width:50%; border-radius:8px;"> <?= isset($noerror) ? $noerror : '' ?> </div> <!--this to echo the successful entry -->
                 <div>
                 <?php if ( $this->session->userdata('admin_level')==1) {?>
+                  <div class="div">
                 <h2 style="color:gray;">Add a new admin</h2>
                         <form action="registeradmin" method="POST"> 
                                 <input class='inputadmin' type="text" name="name" placeholder="name">
@@ -83,6 +85,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 <br>
                                 <input class='inputadmin' type="password" name="passwordConfirm" placeholder="Retype your password">
                                 <br>
+                                    <lable style="color:orange;">Chose your adminstrator level</lable><br>
                                     <select class='inputadmin' name="level">
                                     <option value="0">Normal Admin</option>
                                     <option value="1">Super Admin</option>
@@ -90,10 +93,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 <br>
                                 <input class='buttonreg' type="submit" name="Create" value="Create">
                         </form>
+                </div>
                 <?php }?>
                 </div>
-                
-<h2 style="color:#ff3232;">Pending Posts:</h2>
+ <br>     <!--we need to fix this-->
+          <?php if ($this->session->userdata('status')=='pending') {?>         
+          <h2 style="color:#ff3232; text-align:center; border: solid 2px #ff3232; border-radius:10px; width:30%; margin:auto;"><?="You have pending posts"?></h2>
+          <?php }?>
+<br>
 <?php
  if (isset($message)) {
     echo $message;
@@ -101,16 +108,26 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	if (isset($listings)){
 		foreach ($listings as $key ) {
 			?>
-			<table style="color:#e06a26; background-color:#434343 ;width:50%; border-radius:4px; text-align:center; margin:auto; ">
+			<table>
 			<tr>
-			<td>image:[Assuming an image is posted]<?= $key['image']?></td>
-			<td>Post title:<?= $key['title']?></td>
-			<td>Post description:<?= $key['description']?></td>
-            <input type='hidden' value=<?= $key['id']?>>
-            <td><a href="editpost/<?= $key['id'] ?>"><button class='buttonview' type="edit">Edit</button></a></td>
-            <td><a href="approvepost/<?= $key['id'] ?>"><button class='buttonlogin' type="Aprove">Approve</button></a></td>
-            <td><a href="rejectpost/<?= $key['id'] ?>"><button class='buttondel' type="reject">Reject</button></a></td>
-			</tr>
+    
+			<th style='text-align:center;'>Image</th>
+			<th style='text-align:center;'>Post title</th>
+      <th style='text-align:center;'>Post description</th>
+      <th style='text-align:center;'>Action</th>
+      <input type='hidden' value=<?= $key['id']?>>
+
+      </tr>
+      <tr>
+          <td><?= $key['image']?></td>
+          <td><?= $key['title']?></td>
+          <td><?= $key['description']?></td>
+          <td>
+          <a href="editpost/<?= $key['id'] ?>"><button class='buttonview' type="edit">Edit</button></a>
+          <a href="approvepost/<?= $key['id'] ?>"><button class='buttonlogin' type="Aprove">Approve</button></a>
+          <a href="rejectpost/<?= $key['id'] ?>"><button class='buttondel' type="reject">Reject</button></a>
+          </td>
+        </tr>
 			</table>
 <?php			
 		}

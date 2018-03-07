@@ -56,27 +56,26 @@ defined('BASEPATH') or exit('No direct script access allowed');
 </header>
 
 
-
-<body>
+<body background="<?php echo base_url(); ?>assets\images\ddd.png" alt="ddd.jpg" style='opacity:0.9;'>
  <h3 style="font-family:arial; color:#E06926">VCR CP/View All Posts</h3>
  <?php
 if (isset($listings)){
 foreach ($listings as $key)  { 
     ?> 
-    <table style="color:#e06a26; background-color:#434343 ;width:50%; border-radius:4px; text-align:center; margin:auto; ">
+    <table>
 			<tr>
-			<th>image:</th>
-			<th>Post title:</th>
-			<th>Post description:</th>
-      <th>Post status:</th>
-      <th>Action:</th>
+			<th style='text-align:center;'>image</th>
+			<th style='text-align:center;'>Post title</th>
+			<th style='text-align:center;'>Post description</th>
+      <th style='text-align:center;'>Post status</th>
+      <th style='text-align:center;'>Action</th>
             </tr>
             <tr>
             <td><?='<img alt="Postphoto" class="imgpost" src=uploads/' . $key['image'] .'>';?></td>
             <td> <?= $key['title']?></td>
             <td> <?= $key['description']?></td>
             <td> <?= $key['status']?></td>
-            <td><a href="deletepost/<?= $key['id']?>"><button class='buttondel'>delete</button></a></td>
+            <td style='text-align:center;'><a href="deletepost/<?= $key['id']?>"><button class='buttondel'>Delete this record</button></a></td>
             
             </tr>
             <input type='hidden' value=<?= $key['id']?>>
@@ -91,7 +90,7 @@ foreach ($listings as $key)  {
 ?>
 
 
-
+<a class='buttonout' href='http://localhost'>Back to profile</a>
 </body>
 
 <br>

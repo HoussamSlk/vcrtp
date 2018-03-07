@@ -16,7 +16,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <header>
 		<div class="header">
     <div id=squar></dive>
-    <div class="talnt">Talant Portal - Home page for the admin</div>
+    <div class="talnt">Talant Portal - View all companies and Partners</div>
 	 <img src="<?php echo base_url(); ?>assets\images\vc.png" alt="vc.png">
     <div class="list">
     <ul>
@@ -55,8 +55,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 </header>
 
-<body>
- <h3 style="font-family:arial; color:#E06926">VCR CP/View All companies and Partners</h3>
+<body background="<?php echo base_url(); ?>assets\images\ddd.png" alt="ddd.jpg" style='opacity:0.9;'>
+ <h3 style="color:darkorange; font-weight:700; border: solid 2px; border-radius:10px; width:50%; text-align:center; margin:auto;">View all companies and partners</h3>
  <?php
  if (isset($message)) {
     echo $message;
@@ -64,14 +64,22 @@ defined('BASEPATH') or exit('No direct script access allowed');
 if (isset($listings)){
 foreach ($listings as $key)  { 
     ?> 
-    <table style="color:#e06a26; background-color:#434343 ;width:50%; border-radius:4px; text-align:center; margin:auto;">
-    <tr>
-    <td>Company id:<?= $key['id']?></td>
-    <td>Company name:<?= $key['name']?></td>
-    <td>Company email:<?= $key['email']?></td>
-    <td>Company Address:<?= $key['address']?></td>
-	<td>Company Type:<?= $key['type']?></td>
-    <td><a href="deletecompany/<?= $key['id']?>"<button class='button-out' type="delete">Delete</a></button></td>
+    <table>
+  <tr>
+        <th>name</th>
+        <th>email</th>
+        <th>Address</th>
+        <th>Catagory</th>
+       <th>Action</th>
+	</tr>
+  <br>
+  <tr>
+        <td><?= $key['name']?></td>
+        <td><?= $key['email']?></td>
+        <td><?= $key['address']?></td>
+        <td><?= $key['type']?></td>
+        <td style="text-align:center;"><a href="deletecompany/<?= $key['id']?>"<button class='buttonview' type="delete">Delete</a></button></td>
+        
 	</tr>
     </table>
 
@@ -83,7 +91,7 @@ foreach ($listings as $key)  {
 ?>
 
 
-
+<a href="logoutcp"><button class='buttonout' type="submit">Logout</button></a>
 </body>
 
 

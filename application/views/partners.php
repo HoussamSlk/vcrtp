@@ -59,10 +59,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
 
-<body>
+<body background="<?php echo base_url(); ?>assets\images\ddd.png" alt="ddd.jpg" style='opacity:0.9;'>
     <div class="main-containter">
       <br>
-        <h2 style="text-align:center; font-family:arial; color:#5E5E5E">Please register here, or login to your account to start posting</h2>
+        <h2 style="text-align:center; font-family:arial; color:white; font-weight:700">Please register here, or login to your account to start posting</h2>
         <div class="top-container">
 
  
@@ -73,7 +73,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <div style="color:white; background-color:#FFA500; width:50%; border-radius:8px; text-align:center;"> <?= isset($error) ? $error : '' ?> </div> <!--this to echo the validation errors -->
   <div style="color:white; background-color:#3CB371; width:50%; border-radius:8px; text-align:center;"> <?= isset($noerror) ? $noerror : '' ?> </div> <!--this to echo the successful entry -->
 
-            <h3 style="font-family:arial; color:#E06926; text-align: center">SINGUP AREA</h3>
+            <h3 style="font-family:arial; color:#E06926; text-align: center; font-weight:700">SINGUP AREA</h3>
 
             <form class='form' action="register" method="POST" enctype='multipart/form-data'>
                 <input class='input' type="text" name="name" placeholder="Company Name">
@@ -103,7 +103,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                        <option value="trusted">Trusted Educational Partner</option>
                </select>
                 <br>
-                <label>Image should not excceed 512KB and name shouldnot contain charecters or spaces</label> <br>
+                <label style="text-align:center; font-family:arial; color:white;">Image should not excceed 512KB and name shouldnot contain charecters or spaces</label> <br>
                 <button class="buttonview"><input  type="file" name="image"></button>
                 <input class='buttonreg' type="submit" name="register" value="Register">
             </form>
@@ -113,7 +113,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
  <p>-----------------------------------------------------------------------------------------------------------------------------</p>  
          <!--///////////////////////////////////////////////////////////////////////////////////////// -->
       
-         <h3 style="font-family:arial; color:#E06926; text-align: center">LOGIN AREA</h3>
+         <h3 style="font-family:arial; color:#E06926; text-align: center; font-weight:700">LOGIN AREA</h3>
 
 
  <div style="color:white; background-color:#FFA500; width:25%; border-radius:8px; text-align:center;"> <?= isset($logerror) ? $logerror : '' ?> </div> <!--this to echo the validation errors -->

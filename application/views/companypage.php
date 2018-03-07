@@ -58,7 +58,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 </header>
 
-    <body>
+    <body background="<?php echo base_url(); ?>assets\images\ddd.png" alt="ddd.jpg" style='opacity:0.9;'>
 
      <div style="color:white; background-color:red; width:15%; border-radius:4px; text-align:center; margin:auto; "> <?= isset($errorlogin) ? $errorlogin : '' ?> </div> <!--this to echo the validation errors -->
 
@@ -70,7 +70,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                    <?php }?>
            </div>
            
-            <h3 style="font-weight:600; color:gray;">Your recent activities:</h3>
+            <h3 style="font-weight:600; color:white; margin:auto;">Your recent activities:</h3>
     <?php
     if (isset($listings)){
         
@@ -79,15 +79,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
            
           <table>
             <tr>
-             <th><h6 style="color:white">image:</h6></th>
-             <th><h6 style="color:white">Post title:</h6></th>
-             <th><h6 style="color:white">Post description:</h6></th>
-             <th><h6 style="color:white">Post status:</h6></th>
-             <th><h6 style="color:white">Created at:</h6></th>
+             <th style="color:white">image</th>
+             <th style="color:white">Post title</th>
+             <th style="color:white">Post description</th>
+             <th style="color:white">Post status</th>
+             <th style="color:white">Created at</th>
             <br>
             </tr>
             <tr>
-             <td><?='<img alt="Postphoto" height="100" width="100" src=uploads/' . $key['image'] .'>';?></td>
+             <td><?='<img alt="Postphoto" height="50" width="50" src=uploads/' . $key['image'] .'>';?></td>
              <td><?= $key['title']?></td>
              <td><?= $key['description']?></td>
              <td><?= $key['status']?></td>
@@ -98,14 +98,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
         }
     }    ?>
    
-
-
-	
-
-
-
-
-
 
 
                 <div style="text-align:center; margin:auto; ">
